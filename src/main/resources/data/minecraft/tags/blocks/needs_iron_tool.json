@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "smithplusmod:lead_ore",
+    "smithplusmod:raw_lead_block",
+    "smithplusmod:deepslate_lead_ore",
+    "smithplusmod:lead_block",
+    "smithplusmod:silver_ore",
+    "smithplusmod:raw_silver_block",
+    "smithplusmod:deepslate_silver_ore"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+    {
+    "item": "smithplusmod:raw_tin_block"
+    }
+  ],
+
+  "result": {
+    "item": "smithplusmod:raw_tin",
+    "count": 9
+  }
+}

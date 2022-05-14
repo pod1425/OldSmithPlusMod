@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "smithplusmod:tin_ore",
+    "smithplusmod:raw_tin_block",
+    "smithplusmod:deepslate_tin_ore",
+    "smithplusmod:tin_block",
+    "smithplusmod:silver_block"
+  ]
+}

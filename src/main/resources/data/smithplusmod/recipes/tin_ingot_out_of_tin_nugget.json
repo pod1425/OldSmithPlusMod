@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "smithplusmod:tin_nugget"
+    }
+  },
+  "result": {
+    "item": "smithplusmod:tin_ingot",
+    "count": 9
+  }
+}

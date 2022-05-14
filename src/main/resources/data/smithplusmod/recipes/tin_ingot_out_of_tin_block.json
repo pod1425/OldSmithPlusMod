@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "pattern" : [
+    {
+      "item": "smithplusmod:tin_block"
+    }
+  ],
+    "result" : {
+      "item": "smithplusmod:tin_ingot",
+      "count": 9
+  }
+}

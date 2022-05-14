@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "smithplusmod:tin_ore",
+    "smithplusmod:raw_tin_block",
+    "smithplusmod:deepslate_tin_ore",
+    "smithplusmod:tin_block",
+    "smithplusmod:lead_ore",
+    "smithplusmod:raw_lead_block",
+    "smithplusmod:deepslate_lead_ore",
+    "smithplusmod:lead_block"
+  ]
+}

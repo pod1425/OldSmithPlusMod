@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "pattern": [
+    {
+      "item": "smithplusmod:raw_silver_block"
+    }
+  ],
+    "result": {
+      "item": "smithplusmod:raw_silver"
+      "count": 9
+  }
+}
