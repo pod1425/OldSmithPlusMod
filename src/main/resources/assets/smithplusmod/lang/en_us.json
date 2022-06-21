@@ -19,6 +19,8 @@
   "block.smithplusmod.deepslate_silver_ore": "Deepslate Silver Ore",
   "block.smithplusmod.raw_silver_block": "Block of Raw Silver",
   "block.smithplusmod.silver_block": "Silver Block",
+  "block.smithplusmod.ceramic_crucible": "Ceramic Crucible",
+  "block.smithplusmod.ceramic_crucible_with_metal": "Ceramic Crucible with Metal",
 
   "item.smithplusmod.oak_bark": "Oak Log Bark",
   "item.smithplusmod.acacia_bark": "Acacia Log Bark",
@@ -39,6 +41,7 @@
   "item.smithplusmod.fiber": "Fiber",
   "item.smithplusmod.rope": "Rope",
   "item.smithplusmod.coke_coal": "Coke Coal",
+
   "item.smithplusmod.bronze_axe_head": "Bronze Axe Head",
   "item.smithplusmod.bronze_blade": "Bronze Blade",
   "item.smithplusmod.bronze_counterweight": "Bronze Counterweight",
@@ -89,5 +92,8 @@
 
   "tooltip.smithplusmod.nether_bark.tooltip_shift": "§8Throw it in lava.",
   "tooltip.smithplusmod.nether_bark.tooltip": "§8This has no purpose.",
-  "tooltip.smithplusmod.silver_block.tooltip": "§8Sadly, not a mirror"
+  "tooltip.smithplusmod.silver_block.tooltip": "§8Sadly, not a mirror",
+  "tooltip.smithplusmod.crucible.temperature": "§7Temperature: ",
+  "tooltip.smithplusmod.crucible.contents": "§7Contents: "
+
 }

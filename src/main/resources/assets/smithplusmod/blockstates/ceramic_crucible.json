@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "smithplusmod:block/ceramic_crucible" },
+    "facing=east": { "model": "smithplusmod:block/ceramic_crucible", "y": 90 },
+    "facing=south": { "model": "smithplusmod:block/ceramic_crucible", "y": 180 },
+    "facing=west": { "model": "smithplusmod:block/ceramic_crucible", "y": 270 }
+  }
+}

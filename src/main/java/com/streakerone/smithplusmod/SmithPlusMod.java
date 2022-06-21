@@ -1,6 +1,7 @@
 package com.streakerone.smithplusmod;
 
 import com.streakerone.smithplusmod.block.ModBlocks;
+import com.streakerone.smithplusmod.block.entity.ModBlockEntities;
 import com.streakerone.smithplusmod.item.ModItems;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -33,6 +34,7 @@ public class SmithPlusMod
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         modEventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading

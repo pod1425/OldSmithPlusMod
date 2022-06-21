@@ -1,11 +1,10 @@
 package com.streakerone.smithplusmod.item;
 
 import com.streakerone.smithplusmod.SmithPlusMod;
-import com.streakerone.smithplusmod.item.custom.BarkItem;
-import com.streakerone.smithplusmod.item.custom.BladeItem;
-import com.streakerone.smithplusmod.item.custom.FuelItem;
-import com.streakerone.smithplusmod.item.custom.NetherBarkItem;
+import com.streakerone.smithplusmod.item.custom.*;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -15,8 +14,12 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, SmithPlusMod.MOD_ID);
+    public static void register(IEventBus modEventBus) {
+        ITEMS.register(modEventBus);
+    }
 
     //item creations
+    //TODO: add mangrove bark
     public static final RegistryObject<Item> OAK_BARK = ITEMS.register("oak_bark",
             () -> new BarkItem(new Item.Properties().tab(ModItemGroup.SMITH_MATERIALS)));
     public static final RegistryObject<Item> BIRCH_BARK = ITEMS.register("birch_bark",
@@ -47,7 +50,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModItemGroup.SMITH_MATERIALS)));
     public static final RegistryObject<Item> LEAD_NUGGET = ITEMS.register("lead_nugget",
             () -> new Item(new Item.Properties().tab(ModItemGroup.SMITH_MATERIALS)));
-
+    //TODO: add silver nugget
     public static final RegistryObject<Item> RAW_SILVER = ITEMS.register("raw_silver",
             () -> new Item(new Item.Properties().tab(ModItemGroup.SMITH_MATERIALS)));
     public static final RegistryObject<Item> SILVER_INGOT = ITEMS.register("silver_ingot",
@@ -61,7 +64,7 @@ public class ModItems {
     public static final RegistryObject<Item> COKE_COAL = ITEMS.register("coke_coal",
             () -> new FuelItem(3200, new Item.Properties().tab(ModItemGroup.SMITH_MATERIALS)));
 
-
+    //TODO: make tags for different parts
     public static final RegistryObject<Item> WOODEN_AXE_HEAD = ITEMS.register("wooden_axe_head",
             () -> new Item(new Item.Properties().tab(ModItemGroup.SMITH_PARTS)));
     public static final RegistryObject<Item> WOODEN_HOE_HEAD = ITEMS.register("wooden_hoe_head",
@@ -163,7 +166,5 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModItemGroup.SMITH_PARTS)));
 
 
-    public static void register(IEventBus modEventBus) {
-        ITEMS.register(modEventBus);
-    }
+
 }
