@@ -94,6 +94,16 @@
   "tooltip.smithplusmod.nether_bark.tooltip": "§8This has no purpose.",
   "tooltip.smithplusmod.silver_block.tooltip": "§8Sadly, not a mirror",
   "tooltip.smithplusmod.crucible.temperature": "§7Temperature: ",
-  "tooltip.smithplusmod.crucible.contents": "§7Contents: "
+  "tooltip.smithplusmod.crucible.contents": "§7Contents: ",
 
+  "variable.smithplusmod.metal.iron": "Iron",
+  "variable.smithplusmod.metal.tin": "Tin",
+  "variable.smithplusmod.metal.copper": "Copper",
+  "variable.smithplusmod.metal.gold": "Gold",
+  "variable.smithplusmod.metal.silver": "Silver",
+  "variable.smithplusmod.metal.lead": "Lead",
+  "variable.smithplusmod.metal.platinum": "Platinum",
+  "variable.smithplusmod.metal.titanium": "Titanium",
+
+  "damagesource.smithplusmod.blade": "Held sword incorrectly"
 }

@@ -1,6 +1,6 @@
 package com.streakerone.smithplusmod.block.entity.custom;
 
-import com.streakerone.smithplusmod.util.TemperatureImpl;
+import com.streakerone.smithplusmod.util.variables.temperature.TemperatureImpl;
 
 import com.streakerone.smithplusmod.block.entity.ModBlockEntities;
 import com.streakerone.smithplusmod.util.ModTags;

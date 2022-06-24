@@ -2,7 +2,7 @@ package com.streakerone.smithplusmod.block.custom;
 
 import com.streakerone.smithplusmod.block.entity.ModBlockEntities;
 import com.streakerone.smithplusmod.block.entity.custom.CrucibleWithMetalBlockEntity;
-import com.streakerone.smithplusmod.util.TemperatureImpl;
+import com.streakerone.smithplusmod.util.variables.temperature.TemperatureImpl;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.damagesource.DamageSource;

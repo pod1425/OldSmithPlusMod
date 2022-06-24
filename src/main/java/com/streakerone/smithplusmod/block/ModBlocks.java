@@ -27,6 +27,10 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS
             = DeferredRegister.create(ForgeRegistries.BLOCKS, SmithPlusMod.MOD_ID);
 
+    public static void register(IEventBus eventBus){
+        BLOCKS.register(eventBus);
+    }
+
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
@@ -38,14 +42,14 @@ public class ModBlocks {
 
 
     private static <T extends Block> void registerCrucibleBlockItem(String name, RegistryObject<T> block){
-        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new CrucibleWithMetalBlockItem.Properties().tab(ModItemGroup.SMITH_BLOCKS)));
+        ModItems.ITEMS.register(name, () -> new CrucibleWithMetalBlockItem(block.get(),
+                new Item.Properties().tab(ModItemGroup.SMITH_BLOCKS)));
     }
     private static <T extends Block>RegistryObject<T> registerCrucibleBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerCrucibleBlockItem(name, toReturn);
         return toReturn;
     }
-
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, String tooltipKey){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn, tooltipKey);
@@ -61,12 +65,17 @@ public class ModBlocks {
         });
     }
 
-    public static void register(IEventBus eventBus){
-        BLOCKS.register(eventBus);
-    }
+
 
     public static final RegistryObject<Block> TIN_ORE = registerBlock("tin_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(2f).requiresCorrectToolForDrops()));
+
+
+
+
+
+
+
     public static final RegistryObject<Block> DEEPSLATE_TIN_ORE = registerBlock("deepslate_tin_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(4f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> TIN_BLOCK = registerBlock("tin_block",

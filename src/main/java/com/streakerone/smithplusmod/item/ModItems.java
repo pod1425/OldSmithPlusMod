@@ -18,8 +18,27 @@ public class ModItems {
         ITEMS.register(modEventBus);
     }
 
+    public static final RegistryObject<Item> TIN_INGOT = ITEMS.register("tin_ingot",
+            () -> new Item(new Item.Properties().tab(ModItemGroup.SMITH_MATERIALS)));
+
+
+
+
+
+
+
+
+
     //item creations
     //TODO: add mangrove bark
+    //TODO: add refining flux?
+    //TODO: add platinum and titanium
+    //TODO: add all kinds of plates and wires
+    //TODO: add junk metal alloy, cracked metal bar, overheated metal chunk
+
+
+
+
     public static final RegistryObject<Item> OAK_BARK = ITEMS.register("oak_bark",
             () -> new BarkItem(new Item.Properties().tab(ModItemGroup.SMITH_MATERIALS)));
     public static final RegistryObject<Item> BIRCH_BARK = ITEMS.register("birch_bark",
@@ -39,8 +58,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> RAW_TIN = ITEMS.register("raw_tin",
             () -> new Item(new Item.Properties().tab(ModItemGroup.SMITH_MATERIALS)));
-    public static final RegistryObject<Item> TIN_INGOT = ITEMS.register("tin_ingot",
-            () -> new Item(new Item.Properties().tab(ModItemGroup.SMITH_MATERIALS)));
+
     public static final RegistryObject<Item> TIN_NUGGET = ITEMS.register("tin_nugget",
             () -> new Item(new Item.Properties().tab(ModItemGroup.SMITH_MATERIALS)));
 

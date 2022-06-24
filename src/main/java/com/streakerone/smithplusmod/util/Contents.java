@@ -1,4 +1,5 @@
 package com.streakerone.smithplusmod.util;
 
-public class Gem {
+public class Contents {
+
 }

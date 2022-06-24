@@ -1,0 +1,36 @@
+     Changelog (14.05.22)
+ * * * ver "Alpha 0.0.1" * * *
+
+ * General:
+   - Project created
+   - Added mod object register
+   - Added textures for following blocks and items
+
+ * Blocks:
+   - Added ores, blocks, raw ore blocks for tin, silver, lead
+
+ * Items:
+   - Added raw ores and ingots for tin, silver, lead
+   - Added tin and lead nuggets
+   - Added ropes and fiber
+     - Ropes are fuel (can smelt 1 item)
+     - Fiber is edible, has 20% chance of giving slowness for 5 sec
+   - Added bark items for all wood types
+     - Overworld barks transforms into fiber after being in water for 10 sec
+     - Overworld barks is fuel ()
+     - Nether barks cant burn in lava
+   - Added coke coal (can smelt 16 items)
+   - Added parts for asebling tools and weapons
+     - Wooden sword parts
+     - Sword parts (Blade, Counterweight, Guard) for:
+       - Bronze, iron, gold, steel, netherite
+       - Player takes damage while holding blade in hand
+     - Tool parts (Axe, Hoe, Pickaxe, Shovel heads) for:
+       - wood, bronze, iron, gold, steel, netherite
+     - Small and flat boulders with sharpen variants
+     - Long and massive boulders
+
+ * Recipes
+   - Tin and lead ingots to nuggets and vice versa
+   - Tin, lead and silver raw block and blocks to raw ores and ingots, and vice versa
+   - 4 fiber to rope
