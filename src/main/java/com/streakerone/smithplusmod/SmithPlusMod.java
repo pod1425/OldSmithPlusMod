@@ -3,6 +3,7 @@ package com.streakerone.smithplusmod;
 import com.streakerone.smithplusmod.block.ModBlocks;
 import com.streakerone.smithplusmod.block.entity.ModBlockEntities;
 import com.streakerone.smithplusmod.item.ModItems;
+import com.streakerone.smithplusmod.util.ModLists;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -28,8 +29,14 @@ public class SmithPlusMod
     public static final String MOD_ID = "smithplusmod";
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
-
+    private void initStatics(){
+        ModLists.Metals.init();
+        ModLists.Alloys.init();
+        ModLists.Components.init();
+        ModLists.Gems.init();
+    }
     public SmithPlusMod() {
+        initStatics();
         // Register the setup method for modloading
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModItems.register(modEventBus);

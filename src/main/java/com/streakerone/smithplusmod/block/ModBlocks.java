@@ -43,7 +43,7 @@ public class ModBlocks {
 
     private static <T extends Block> void registerCrucibleBlockItem(String name, RegistryObject<T> block){
         ModItems.ITEMS.register(name, () -> new CrucibleWithMetalBlockItem(block.get(),
-                new Item.Properties().tab(ModItemGroup.SMITH_BLOCKS)));
+                new Item.Properties().tab(ModItemGroup.SMITH_BLOCKS).stacksTo(1)));
     }
     private static <T extends Block>RegistryObject<T> registerCrucibleBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
@@ -69,13 +69,6 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> TIN_ORE = registerBlock("tin_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(2f).requiresCorrectToolForDrops()));
-
-
-
-
-
-
-
     public static final RegistryObject<Block> DEEPSLATE_TIN_ORE = registerBlock("deepslate_tin_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(4f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> TIN_BLOCK = registerBlock("tin_block",

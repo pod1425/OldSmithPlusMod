@@ -23,4 +23,10 @@ public class ModItemGroup {
             return new ItemStack(ModBlocks.TIN_ORE.get());
         }
     };
+    public static final CreativeModeTab SMITH_TOOLS_AND_WEAPONS = new CreativeModeTab("SmithToolsAndWeapons") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(ModBlocks.TIN_ORE.get());
+        }
+    };
 }

@@ -1,12 +1,13 @@
 package com.streakerone.smithplusmod.block.custom;
 
-import com.streakerone.smithplusmod.block.entity.ModBlockEntities;
 import com.streakerone.smithplusmod.block.entity.custom.CrucibleWithMetalBlockEntity;
-import com.streakerone.smithplusmod.util.variables.temperature.TemperatureImpl;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -25,6 +26,7 @@ import org.jetbrains.annotations.Nullable;
 
 
 public class CrucibleWithMetalBlock extends BaseEntityBlock {
+
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     //Block.box(9, 7, 7, 16, 7, 9)
     private static final VoxelShape SHAPE_SOUTH = Shapes.or(Block.box(4, 0, 4 - 3, 12, 8, 12 - 3), Block.box(7, 6, 8, 9, 7, 16));
@@ -40,18 +42,20 @@ public class CrucibleWithMetalBlock extends BaseEntityBlock {
 
     @Override
     public void stepOn(Level level, BlockPos blockPos, BlockState state, Entity entity) {
-        if (!level.isClientSide()) {
+        if (level.isClientSide()) {
             BlockEntity tile = level.getBlockEntity(blockPos);
-            if (tile instanceof TemperatureImpl) {
-                int temperature = ((TemperatureImpl) tile).getTemperature();
-                if (temperature > 200) {
-                    entity.hurt(new DamageSource("Very hot crucible"), 3f);
-                } else if (temperature > 40) {
-                    entity.hurt(new DamageSource("Hot crucible"), 1.2f);
-                } else if (temperature > 8) {
-                    entity.hurt(new DamageSource("Hot crucible"), 0.3f);
-                }
+            int temperature = ((CrucibleWithMetalBlockEntity) tile).temperature.getValue();
+            if (temperature > 200) {
+                entity.hurt(new DamageSource("Very hot crucible"), 3f);
+            } else if (temperature > 40) {
+                entity.hurt(new DamageSource("Hot crucible"), 1.2f);
+            } else if (temperature > 8) {
+                entity.hurt(new DamageSource("Hot crucible"), 0.3f);
             }
+            try{
+                Player player = Minecraft.getInstance().player;
+                player.sendMessage(new TextComponent(temperature + ""), player.getUUID());
+            } catch (NullPointerException ignored){}
         }
         super.stepOn(level, blockPos, state, entity);
     }
@@ -99,14 +103,13 @@ public class CrucibleWithMetalBlock extends BaseEntityBlock {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
-        return createTickerHelper(pBlockEntityType, ModBlockEntities.CRUCIBLE_WITH_METAL_BLOCK_ENTITY.get(),
-                CrucibleWithMetalBlockEntity::tick);
+        return (l, pos, blockState, blockEntity) ->
+                ((CrucibleWithMetalBlockEntity) blockEntity).tick(l, pos, blockState, (CrucibleWithMetalBlockEntity) blockEntity);
     }
 
     @Override
     public RenderShape getRenderShape(BlockState pState) {
         return RenderShape.MODEL;
     }
-
 
 }

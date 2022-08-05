@@ -4,6 +4,7 @@ import com.streakerone.smithplusmod.SmithPlusMod;
 import com.streakerone.smithplusmod.item.custom.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -17,26 +18,12 @@ public class ModItems {
     public static void register(IEventBus modEventBus) {
         ITEMS.register(modEventBus);
     }
-
-    public static final RegistryObject<Item> TIN_INGOT = ITEMS.register("tin_ingot",
-            () -> new Item(new Item.Properties().tab(ModItemGroup.SMITH_MATERIALS)));
-
-
-
-
-
-
-
-
-
     //item creations
     //TODO: add mangrove bark
     //TODO: add refining flux?
     //TODO: add platinum and titanium
     //TODO: add all kinds of plates and wires
     //TODO: add junk metal alloy, cracked metal bar, overheated metal chunk
-
-
 
 
     public static final RegistryObject<Item> OAK_BARK = ITEMS.register("oak_bark",
@@ -58,7 +45,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> RAW_TIN = ITEMS.register("raw_tin",
             () -> new Item(new Item.Properties().tab(ModItemGroup.SMITH_MATERIALS)));
-
+    public static final RegistryObject<Item> TIN_INGOT = ITEMS.register("tin_ingot",
+            () -> new Item(new Item.Properties().tab(ModItemGroup.SMITH_MATERIALS)));
     public static final RegistryObject<Item> TIN_NUGGET = ITEMS.register("tin_nugget",
             () -> new Item(new Item.Properties().tab(ModItemGroup.SMITH_MATERIALS)));
 
@@ -183,6 +171,11 @@ public class ModItems {
     public static final RegistryObject<Item> NETHERITE_SHOVEL_HEAD = ITEMS.register("netherite_shovel_head",
             () -> new Item(new Item.Properties().tab(ModItemGroup.SMITH_PARTS)));
 
+    //weapons
+    public static final RegistryObject<Item> STEEL_KATANA = ITEMS.register("steel_katana",
+            () -> new Item(new Item.Properties().tab(ModItemGroup.SMITH_TOOLS_AND_WEAPONS)));
+    public static final RegistryObject<Item> NETHERITE_KATANA = ITEMS.register("netherite_katana",
+            () -> new SwordItem(ModTiers.KATANA_TIER, 6, 0.5f, new Item.Properties().tab(ModItemGroup.SMITH_TOOLS_AND_WEAPONS)));
 
 
 }

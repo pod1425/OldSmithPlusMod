@@ -88,6 +88,8 @@
   "item.smithplusmod.wooden_pickaxe_head": "Wooden Pickaxe Head",
   "item.smithplusmod.wooden_shovel_head": "Wooden Shovel Head",
   "item.smithplusmod.wooden_sword_parts": "Wooden Sword Parts",
+  "item.smithplusmod.steel_katana": "Katana",
+  "item.smithplusmod.netherite_katana": "Netherite Katana",
 
 
   "tooltip.smithplusmod.nether_bark.tooltip_shift": "§8Throw it in lava.",

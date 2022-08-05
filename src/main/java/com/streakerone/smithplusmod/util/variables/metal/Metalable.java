@@ -13,4 +13,6 @@ public interface Metalable {
     int getTicksPerHeatUnit();
     //returns value of metal
     int getValue();
+    //returns boolean value for if object is alloy or not
+    boolean isAlloy();
 }

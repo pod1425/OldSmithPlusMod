@@ -2,34 +2,44 @@ package com.streakerone.smithplusmod.util.variables.metal;
 
 import com.streakerone.smithplusmod.util.ModLists;
 
+import java.util.List;
 
-public class Metal implements Metalable {
+public class Alloy implements Metalable{
     private int id;
     protected String name;
+    protected int value;
+
+    protected List<Metal> components;
+    protected List<Integer> componentsAmount;
+
     protected int meltingPoint;
     protected int ticksPerHeatUnit;
-    protected int value;
+
     protected int maxForgingTemp;
     protected int minForgingTemp;
     protected int idealForgingTemp;
 
-    public Metal(String name) {
-        id = ModLists.Metals.findIdByName(name);
+    public Alloy(String name) {
+        id = ModLists.Alloys.findIdByName(name);
         if (id < 0) {
-            throw new NullPointerException("Error: metal you are trying to use isn`t listed!");
+            throw new NullPointerException("Error: alloy you are trying to use isn`t listed!");
         } else {
             this.name = name;
             copyProperties();
         }
     }
 
-    private void copyProperties() {
-        meltingPoint = ModLists.Metals.getMeltingTemperature(name);
-        ticksPerHeatUnit = ModLists.Metals.getTicksPerHeatUnit(name);
-        value = ModLists.Metals.getValue(name);
-        maxForgingTemp = ModLists.Metals.getMaxForgingTemperature(name);
-        minForgingTemp = ModLists.Metals.getMinForgingTemperature(name);
-        idealForgingTemp = ModLists.Metals.getIdealForgingTemperature(name);
+    private void copyProperties(){
+        value = ModLists.Alloys.getValue(name);
+        components = ModLists.Alloys.getComponents(name);
+        componentsAmount = ModLists.Alloys.getComponentsAmount(name);
+        meltingPoint = ModLists.Alloys.getMeltingTemperature(name);
+        ticksPerHeatUnit = ModLists.Alloys.getTicksPerHeatUnit(name);
+
+        minForgingTemp = ModLists.Alloys.getMinForgingTemperature(name);
+        idealForgingTemp = ModLists.Alloys.getIdealForgingTemperature(name);
+        maxForgingTemp = ModLists.Alloys.getMaxForgingTemperature(name);
+
     }
 
     @Override
@@ -62,14 +72,10 @@ public class Metal implements Metalable {
         return value;
     }
 
-    public String toString(){
-        return name;
-    }
-
-    public void changeMetal(String name){
-        int tempid = ModLists.Metals.findIdByName(name);
+    public void changeAlloy(String name){
+        int tempid = ModLists.Alloys.findIdByName(name);
         if (id < 0) {
-            throw new NullPointerException("Error: metal you are trying to use isn`t listed!");
+            throw new NullPointerException("Error: alloy you are trying to use isn`t listed!");
         } else {
             id = tempid;
             this.name = name;
@@ -79,6 +85,6 @@ public class Metal implements Metalable {
 
     @Override
     public boolean isAlloy(){
-        return false;
+        return true;
     }
 }
