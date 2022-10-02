@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "smithplusmod:block/cut_redstone_block"
+  }
+}

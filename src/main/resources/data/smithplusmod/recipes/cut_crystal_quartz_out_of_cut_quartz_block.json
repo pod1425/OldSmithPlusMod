@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "pattern": [
+    {
+      "item": "smithplusmod:cut_quartz_block"
+    }
+  ],
+    "result": {
+      "item": "smithplusmod:cut_crystal_quartz"
+      "count": 9
+  }
+}

@@ -1,4 +1,4 @@
-package com.streakerone.smithplusmod.util;
+package com.streakerone.smithplusmod.util.variables;
 
 import com.streakerone.smithplusmod.util.variables.metal.Metalable;
 

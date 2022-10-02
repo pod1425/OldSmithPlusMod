@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "smithplusmod:block/amber_ore"
+  }
+}

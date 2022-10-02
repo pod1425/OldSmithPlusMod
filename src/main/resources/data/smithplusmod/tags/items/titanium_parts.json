@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "smithplusmod:titanium_axe_head",
+    "smithplusmod:titanium_blade",
+    "smithplusmod:titanium_counterweight",
+    "smithplusmod:titanium_guard",
+    "smithplusmod:titanium_pickaxe_head"
+  ]
+}

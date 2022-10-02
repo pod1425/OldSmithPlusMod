@@ -1,14 +1,5 @@
 package com.streakerone.smithplusmod.util.variables.temperature;
 
-import net.minecraft.nbt.StreamTagVisitor;
-import net.minecraft.nbt.Tag;
-import net.minecraft.nbt.TagType;
-import net.minecraft.nbt.TagVisitor;
-
-import java.io.DataOutput;
-import java.io.IOException;
-
-//TODO: develop class to handle temperature mechanic
 public class Temperature {
     protected int temperature;
     public static final int MIN_TEMP = 2;

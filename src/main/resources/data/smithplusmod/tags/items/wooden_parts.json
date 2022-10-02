@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "smithplusmod:wooden_axe_head",
+    "smithplusmod:wooden_sword_parts",
+    "smithplusmod:wooden_hoe_head",
+    "smithplusmod:wooden_pickaxe_head",
+    "smithplusmod:wooden_shovel_head"
+  ]
+}

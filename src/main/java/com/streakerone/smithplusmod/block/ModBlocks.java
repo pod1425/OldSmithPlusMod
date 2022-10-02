@@ -5,7 +5,7 @@ import com.streakerone.smithplusmod.block.custom.CrucibleBlock;
 import com.streakerone.smithplusmod.block.custom.CrucibleWithMetalBlock;
 import com.streakerone.smithplusmod.item.ModItemGroup;
 import com.streakerone.smithplusmod.item.ModItems;
-import com.streakerone.smithplusmod.item.custom.CrucibleWithMetalBlockItem;
+import com.streakerone.smithplusmod.item.custom.smithing.CrucibleWithMetalBlockItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.*;
@@ -27,45 +27,47 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS
             = DeferredRegister.create(ForgeRegistries.BLOCKS, SmithPlusMod.MOD_ID);
 
-    public static void register(IEventBus eventBus){
+    public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
 
-    private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
+    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;
     }
-    private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block){
+
+    private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block) {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(ModItemGroup.SMITH_BLOCKS)));
     }
 
 
-    private static <T extends Block> void registerCrucibleBlockItem(String name, RegistryObject<T> block){
+    private static <T extends Block> void registerCrucibleBlockItem(String name, RegistryObject<T> block) {
         ModItems.ITEMS.register(name, () -> new CrucibleWithMetalBlockItem(block.get(),
                 new Item.Properties().tab(ModItemGroup.SMITH_BLOCKS).stacksTo(1)));
     }
-    private static <T extends Block>RegistryObject<T> registerCrucibleBlock(String name, Supplier<T> block){
+
+    private static <T extends Block> RegistryObject<T> registerCrucibleBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerCrucibleBlockItem(name, toReturn);
         return toReturn;
     }
-    private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block, String tooltipKey){
+
+    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, String tooltipKey) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn, tooltipKey);
         return toReturn;
     }
-    private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block, String tooltipKey){
+
+    private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block, String tooltipKey) {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
-                new Item.Properties().tab(ModItemGroup.SMITH_BLOCKS)){
+                new Item.Properties().tab(ModItemGroup.SMITH_BLOCKS)) {
             @Override
             public void appendHoverText(ItemStack p_40572_, @Nullable Level p_40573_, List<Component> pTooltip, TooltipFlag p_40575_) {
                 pTooltip.add(new TranslatableComponent(tooltipKey));
             }
         });
     }
-
-
 
     public static final RegistryObject<Block> TIN_ORE = registerBlock("tin_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(2f).requiresCorrectToolForDrops()));
@@ -94,6 +96,23 @@ public class ModBlocks {
             "tooltip.smithplusmod.silver_block.tooltip");
     public static final RegistryObject<Block> RAW_SILVER_BLOCK = registerBlock("raw_silver_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(3.5f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> AMBER_ORE = registerBlock("amber_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(3.5f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> DEEPSLATE_AMBER_ORE = registerBlock("deepslate_amber_ore",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(3.5f).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> CUT_DIAMOND_BLOCK = registerBlock("cut_diamond_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(5f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> CUT_AMETHYST_BLOCK = registerBlock("cut_amethyst_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(5f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> CUT_LAPIS_BLOCK = registerBlock("cut_lapis_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(5f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> CUT_REDSTONE_BLOCK = registerBlock("cut_redstone_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(5f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> CUT_QUARTZ_BLOCK = registerBlock("cut_quartz_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(5f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> CUT_AMBER_BLOCK = registerBlock("cut_amber_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(5f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> CERAMIC_CRUCIBLE = registerBlock("ceramic_crucible",
             () -> new CrucibleBlock(BlockBehaviour.Properties.copy(Blocks.TERRACOTTA).strength(1.5f)));

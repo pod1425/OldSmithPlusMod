@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "smithplusmod:cut_redstone_stone"
+    }
+  },
+  "result": {
+    "item": "smithplusmod:cut_redstone_block"
+  }
+}

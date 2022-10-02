@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "smithplusmod:iron_axe_head",
+    "smithplusmod:iron_blade",
+    "smithplusmod:iron_counterweight",
+    "smithplusmod:iron_guard",
+    "smithplusmod:iron_hoe_head",
+    "smithplusmod:iron_pickaxe_head",
+    "smithplusmod:iron_shovel_head"
+  ]
+}

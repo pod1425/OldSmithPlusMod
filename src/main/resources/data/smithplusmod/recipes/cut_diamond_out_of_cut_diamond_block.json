@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "pattern": [
+    {
+      "item": "smithplusmod:cut_diamond_block"
+    }
+  ],
+    "result": {
+      "item": "smithplusmod:cut_diamond"
+      "count": 9
+  }
+}

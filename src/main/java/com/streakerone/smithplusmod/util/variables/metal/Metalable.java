@@ -1,18 +1,42 @@
 package com.streakerone.smithplusmod.util.variables.metal;
 
 public interface Metalable {
-    //returns integer value of temperature needed to melt metal
+    /**
+     * @return name of the metal
+     */
+    String getName();
+    /**
+     * @return integer value of temperature needed to melt metal
+     */
     int getMeltingTemperature();
-    //returns ideal forging temperature of metal
+
+    /**
+     * @return ideal forging temperature of metal
+     */
     int getIdealForgingTemperature();
-    //returns minimal forging temperature, under which trying to forge metal results in cracked metal bar
+
+    /**
+     * @return minimal forging temperature, under which trying to forge metal results in cracked metal bar
+     */
     int getMinForgingTemperature();
-    //returns maximal forging temperature, over which truing to forge metal results in overheated metal chunk
+
+    /**
+     * @return maximal forging temperature, over which trying to forge metal results in overheated metal chunk
+     */
     int getMaxForgingTemperature();
-    //returns time in ticks, that metal needs to heat up 10 degrees Celsium
+
+    /**
+     * @return time in ticks, that metal needs to heat up 10 degrees Celsium
+     */
     int getTicksPerHeatUnit();
-    //returns value of metal
+
+    /**
+     * @return value of metal
+     */
     int getValue();
-    //returns boolean value for if object is alloy or not
+
+    /**
+     * @return if object is alloy or not
+     */
     boolean isAlloy();
 }

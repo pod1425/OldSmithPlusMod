@@ -1,12 +1,9 @@
 package com.streakerone.smithplusmod.block.custom;
 
-import com.streakerone.smithplusmod.ModBlockStateProperties;
+import com.streakerone.smithplusmod.util.variables.temperature.Temperature;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.Rotation;
@@ -14,7 +11,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -27,26 +23,27 @@ public class CrucibleBlock extends Block {
     }
 
     @Override
-    public VoxelShape getShape(BlockState bState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext){
+    public VoxelShape getShape(BlockState bState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return SHAPE;
     }
 
-
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext placeContext){
+    public BlockState getStateForPlacement(BlockPlaceContext placeContext) {
         return this.defaultBlockState().setValue(FACING, placeContext.getHorizontalDirection().getOpposite());
     }
+
     @Override
-    public BlockState rotate(BlockState bState, Rotation rotation){
+    public BlockState rotate(BlockState bState, Rotation rotation) {
         return bState.setValue(FACING, rotation.rotate(bState.getValue(FACING)));
     }
+
     @Override
-    public BlockState mirror(BlockState bState, Mirror mirror){
+    public BlockState mirror(BlockState bState, Mirror mirror) {
         return bState.rotate(mirror.getRotation(bState.getValue(FACING)));
     }
+
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder){
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
         pBuilder.add(FACING);
     }
-
 }

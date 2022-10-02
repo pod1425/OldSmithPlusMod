@@ -15,8 +15,8 @@ public class BarkItem extends Item {
 
     @Override
     public boolean onEntityItemUpdate(ItemStack stack, ItemEntity entity) {
-        if(entity.isInWater()){
-            if(entity.tickCount == 200){
+        if (entity.tickCount == 200) {
+            if (entity.isInWater()) {
                 int amount = stack.getCount();
                 entity.setItem(new ItemStack(ModItems.FIBER.get(), amount));
             }

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "pattern": [
+    {
+      "item": "smithplusmod:cut_amber_block"
+    }
+  ],
+    "result": {
+      "item": "smithplusmod:cut_amber"
+      "count": 9
+  }
+}

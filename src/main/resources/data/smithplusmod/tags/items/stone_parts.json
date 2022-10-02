@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "smithplusmod:long_boulder",
+    "smithplusmod:massive_boulder",
+    "smithplusmod:flat_boulder",
+    "smithplusmod:small_boulder",
+    "smithplusmod:sharpen_flat_boulder",
+    "smithplusmod:sharpen_small_boulder"
+  ]
+}

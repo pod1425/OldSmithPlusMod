@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "pattern": [
+    {
+      "item": "smithplusmod:cut_redstone_block"
+    }
+  ],
+    "result": {
+      "item": "smithplusmod:cut_redstone_stone"
+      "count": 9
+  }
+}

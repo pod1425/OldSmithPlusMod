@@ -8,21 +8,19 @@ public class Alloy implements Metalable{
     private int id;
     protected String name;
     protected int value;
-
-    protected List<Metal> components;
-    protected List<Integer> componentsAmount;
-
     protected int meltingPoint;
     protected int ticksPerHeatUnit;
-
     protected int maxForgingTemp;
     protected int minForgingTemp;
     protected int idealForgingTemp;
 
+    protected List<Metal> components;
+    protected List<Integer> componentsAmount;
+
     public Alloy(String name) {
         id = ModLists.Alloys.findIdByName(name);
         if (id < 0) {
-            throw new NullPointerException("Error: alloy you are trying to use isn`t listed!");
+            throw new NullPointerException("alloy you are trying to use isn`t listed!");
         } else {
             this.name = name;
             copyProperties();
@@ -40,6 +38,11 @@ public class Alloy implements Metalable{
         idealForgingTemp = ModLists.Alloys.getIdealForgingTemperature(name);
         maxForgingTemp = ModLists.Alloys.getMaxForgingTemperature(name);
 
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
     @Override
@@ -70,17 +73,6 @@ public class Alloy implements Metalable{
     @Override
     public int getValue() {
         return value;
-    }
-
-    public void changeAlloy(String name){
-        int tempid = ModLists.Alloys.findIdByName(name);
-        if (id < 0) {
-            throw new NullPointerException("Error: alloy you are trying to use isn`t listed!");
-        } else {
-            id = tempid;
-            this.name = name;
-            copyProperties();
-        }
     }
 
     @Override

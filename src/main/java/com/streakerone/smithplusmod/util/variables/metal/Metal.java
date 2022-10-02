@@ -2,7 +2,6 @@ package com.streakerone.smithplusmod.util.variables.metal;
 
 import com.streakerone.smithplusmod.util.ModLists;
 
-
 public class Metal implements Metalable {
     private int id;
     protected String name;
@@ -16,7 +15,7 @@ public class Metal implements Metalable {
     public Metal(String name) {
         id = ModLists.Metals.findIdByName(name);
         if (id < 0) {
-            throw new NullPointerException("Error: metal you are trying to use isn`t listed!");
+            throw new NullPointerException("metal you are trying to use isn`t listed!");
         } else {
             this.name = name;
             copyProperties();
@@ -30,6 +29,14 @@ public class Metal implements Metalable {
         maxForgingTemp = ModLists.Metals.getMaxForgingTemperature(name);
         minForgingTemp = ModLists.Metals.getMinForgingTemperature(name);
         idealForgingTemp = ModLists.Metals.getIdealForgingTemperature(name);
+    }
+
+    /**
+     * @return name of the metal
+     */
+    @Override
+    public String getName() {
+        return name;
     }
 
     @Override
@@ -69,7 +76,7 @@ public class Metal implements Metalable {
     public void changeMetal(String name){
         int tempid = ModLists.Metals.findIdByName(name);
         if (id < 0) {
-            throw new NullPointerException("Error: metal you are trying to use isn`t listed!");
+            throw new NullPointerException("metal you are trying to use isn`t listed!");
         } else {
             id = tempid;
             this.name = name;

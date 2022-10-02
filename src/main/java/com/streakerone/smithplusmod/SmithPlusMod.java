@@ -29,14 +29,9 @@ public class SmithPlusMod
     public static final String MOD_ID = "smithplusmod";
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
-    private void initStatics(){
-        ModLists.Metals.init();
-        ModLists.Alloys.init();
-        ModLists.Components.init();
-        ModLists.Gems.init();
-    }
+
     public SmithPlusMod() {
-        initStatics();
+        ModLists.init();
         // Register the setup method for modloading
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModItems.register(modEventBus);
